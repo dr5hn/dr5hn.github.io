@@ -1,7 +1,7 @@
-name: Jekyll site CI
+name: Rebuild my site
 
 on:
-  pull_request:
+  push:
     branches:
       - master
   schedule:
