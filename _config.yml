@@ -8,6 +8,8 @@ plugins:
 
 permalink: /:year/:month/:day/:title/
 
+repository: dr5hn/dr5hn.github.io
+
 defaults:
   -
     scope:
@@ -23,7 +25,7 @@ projects:
   #   - stars
   limit: 9
   exclude:
-    archived: false
+    archived: true
     forks: true
     projects:
     # - repo-name
