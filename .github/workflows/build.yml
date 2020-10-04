@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "30 5 * * *"
+    - cron: "30 5 * * 0"
 
 jobs:
   build:
@@ -18,3 +18,9 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+    
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ${{ github.workspace }}/_site
